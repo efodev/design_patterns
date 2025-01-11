@@ -1,5 +1,11 @@
 package pattern.command;
 
+import pattern.command.concrete.GarageDoorOpenCommand;
+import pattern.command.concrete.LightonCommand;
+import pattern.command.controller.SimpleRemoteControl;
+import pattern.command.receiver.GarageDoor;
+import pattern.command.receiver.Light;
+
 public class RemoteControlTest {
 
   public static void main(String[] args) {

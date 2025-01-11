@@ -1,6 +1,9 @@
-package pattern.command;
+package pattern.command.concrete;
 
-public class GarageDoorOpenCommand implements Command{
+import pattern.command.Command;
+import pattern.command.receiver.GarageDoor;
+
+public class GarageDoorOpenCommand implements Command {
   GarageDoor garageDoor;
 
   public GarageDoorOpenCommand(GarageDoor garageDoor) {

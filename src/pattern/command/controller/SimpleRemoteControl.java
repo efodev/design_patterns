@@ -1,4 +1,6 @@
-package pattern.command;
+package pattern.command.controller;
+
+import pattern.command.Command;
 
 public class SimpleRemoteControl {
   // We have a slot to hold our command to control one device

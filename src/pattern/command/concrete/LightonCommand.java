@@ -1,4 +1,7 @@
-package pattern.command;
+package pattern.command.concrete;
+
+import pattern.command.Command;
+import pattern.command.receiver.Light;
 
 /**
  * The light on Command implements the Command Interface
