@@ -12,10 +12,10 @@ public class RemoteControlTest {
     // remote is the invoker of our command; It will be passed a command object that can be used to make request.
     SimpleRemoteControl remote = new SimpleRemoteControl();
     // light is the receiver of the command
-    Light light = new Light();
+    Light light = new Light("light");
     // create a command and pass in the receiver
     LightonCommand lighton = new LightonCommand(light);
-    GarageDoor garageDoor = new GarageDoor();
+    GarageDoor garageDoor = new GarageDoor("Garage");
     GarageDoorOpenCommand garageOpen = new GarageDoorOpenCommand(garageDoor);
 
     remote.setCommand(lighton); // pass command to the invoker

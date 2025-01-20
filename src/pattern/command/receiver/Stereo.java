@@ -1,7 +1,10 @@
 package pattern.command.receiver;
 
 public class Stereo {
-  public Stereo() {};
+  String location;
+  public Stereo(String location) {
+    this.location = location;
+  };
 
   public void on() {
     System.out.println("Stereo is on.");

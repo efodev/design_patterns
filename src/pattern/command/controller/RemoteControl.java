@@ -6,6 +6,7 @@ import pattern.command.concrete.NoCommand;
 public class RemoteControl {
   Command[] onCommands; // holds all on commands
   Command[] offCommands; // holds all off commands
+  Command undoCommand;
 
   /**
    * Instantiate the remote control and populates the command
@@ -19,21 +20,23 @@ public class RemoteControl {
       onCommands[i] = noCommand;
       offCommands[i] = noCommand;
     }
+    this.undoCommand = noCommand;
   }
 
-  public void setOnCommands(int slot, Command onCommand, Command offCommand) {
+  public void setCommands(int slot, Command onCommand, Command offCommand) {
     onCommands[slot] = onCommand;
     offCommands[slot] = offCommand;
   }
 
   public void onButtonWasPushed(int slot) {
     onCommands[slot].execute();
+    this.undoCommand = onCommands[slot];
   }
 
   public void offButtonWasPushed(int slot) {
     offCommands[slot].execute();
+    this.undoCommand = offCommands[slot];
   }
-
   @Override
   public String toString() {
     StringBuffer stringBuffer = new StringBuffer();
@@ -44,5 +47,7 @@ public class RemoteControl {
     }
     return stringBuffer.toString();
   }
-
+public void undoButtonWasPushed() {
+    undoCommand.undo();
+}
 }

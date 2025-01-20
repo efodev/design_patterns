@@ -13,4 +13,6 @@ public class LightoffCommand implements Command {
   public void execute() {
     this.light.off();
   }
+
+  public void undo() {this.light.on();}
 }
